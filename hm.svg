@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+  <rect width="100%" height="100%" fill="#0a0a0a" />
+  
+  <foreignObject width="100%" height="100%">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;900&amp;family=JetBrains+Mono&amp;display=swap');
+
+        body {
+          margin: 0; padding: 0;
+          background: #0a0a0a;
+          font-family: 'Inter', sans-serif;
+          height: 100vh;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #ffffff;
+          overflow: hidden;
+        }
+
+        .container {
+          text-align: left;
+          border-left: 2px solid #ff0000;
+          padding-left: 40px;
+          max-width: 80%;
+          animation: slideIn 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        h1 {
+          font-family: 'Inter', sans-serif;
+          font-weight: 900;
+          font-size: 4rem;
+          margin: 0;
+          letter-spacing: -2px;
+          text-transform: uppercase;
+          background: linear-gradient(180deg, #fff 0%, #444 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+
+        .identity {
+          font-family: 'JetBrains Mono', monospace;
+          color: #ff0000;
+          font-size: 1.2rem;
+          margin-top: -10px;
+          letter-spacing: 5px;
+          font-weight: 300;
+        }
+
+        .message {
+          margin-top: 40px;
+          font-family: 'JetBrains Mono', monospace;
+          color: #888;
+          font-size: 0.9rem;
+          line-height: 1.6;
+        }
+
+        .status-bar {
+          margin-top: 30px;
+          font-size: 10px;
+          color: #333;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+        }
+
+        .cursor {
+          display: inline-block;
+          width: 8px;
+          height: 15px;
+          background: #ff0000;
+          margin-left: 5px;
+          animation: blink 1s infinite;
+        }
+
+        @keyframes slideIn {
+          from { opacity: 0; transform: translateX(-50px); }
+          to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes blink {
+          50% { opacity: 0; }
+        }
+
+        /* Ambient subtle grain */
+        .noise {
+          position: fixed;
+          top: 0; left: 0; width: 100%; height: 100%;
+          opacity: 0.03;
+          pointer-events: none;
+          background: url('https://grainy-gradients.vercel.app/noise.svg');
+        }
+      </style>
+      
+      <div class="noise"></div>
+      <div class="container">
+        <div class="identity">KSOTARIA 1337</div>
+        <h1>TOUCHED.</h1>
+        
+        <div class="message">
+          &gt; SYSTEM_INTEGRITY: <span style="color:#ff0000">COMPROMISED</span><br/>
+          &gt; PRIVILEGE_ESCALATION: SUCCESSFUL<br/>
+          &gt; DATA_ENCRYPTION: BYPASSED<br/><br/>
+          "Security is not a product, but a process."<br/>
+          We are part of your process now.<span class="cursor"></span>
+        </div>
+
+        <div class="status-bar">
+          Feb 2026 // Global Connectivity // #LazarusProject
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+</svg>
+        <p style="color:#444; margin-top:40px;">#FuckYou_Mafia</p>
+      </div>
+    </div>
+  </foreignObject>
+
+  <script type="text/javascript">
+    <![CDATA[
+      console.log("Ksotaria was here.");
+      document.title = "TERMINAL COMPROMISED";
+    ]]>
+  </script>
+</svg>
