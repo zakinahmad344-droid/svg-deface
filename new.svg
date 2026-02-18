@@ -1,102 +1,118 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-  <rect width="100%" height="100%" fill="#050505" />
-
+  <rect width="100%" height="100%" fill="#000" />
+  
   <foreignObject width="100%" height="100%">
     <div xmlns="http://www.w3.org/1999/xhtml">
       <style>
         @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&amp;display=swap');
 
         body {
-          margin: 0;
-          padding: 0;
-          background: transparent;
+          margin: 0; padding: 0;
+          background: #000;
           font-family: 'Share Tech Mono', monospace;
-          color: #ff0000;
           height: 100vh;
           display: flex;
-          flex-direction: column;
           align-items: center;
           justify-content: center;
+          color: #ff0000;
           overflow: hidden;
         }
 
-        /* Overlay Scanline */
-        .scanlines {
-          position: fixed;
+        /* Animasi Matrix Grid Bergerak */
+        .bg {
+          position: absolute;
           top: 0; left: 0; width: 100%; height: 100%;
-          background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
-          background-size: 100% 2px, 3px 100%;
-          pointer-events: none;
+          background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
+                      linear-gradient(90deg, rgba(255, 0, 0, 0.05), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.05));
+          background-size: 100% 4px, 4px 100%;
+          animation: scan 10s linear infinite;
+          z-index: 1;
+        }
+
+        @keyframes scan {
+          from { background-position: 0 0; }
+          to { background-position: 0 100%; }
+        }
+
+        .content {
+          position: relative;
+          text-align: center;
           z-index: 10;
         }
 
-        .container {
-          text-align: center;
-          z-index: 5;
-        }
-
+        /* Judul dengan Efek Glitch Parah */
         h1 {
-          font-size: 4rem;
+          font-size: 60px;
           margin: 0;
-          text-transform: uppercase;
-          letter-spacing: 10px;
-          animation: glitch 1s i infinite;
-          text-shadow: 0.05em 0 0 rgba(255,0,0,.75), -0.025em -0.05em 0 rgba(0,255,0,.75), 0.025em .05em 0 rgba(0,0,255,.75);
+          position: relative;
+          animation: glitch 0.3s cubic-bezier(.25,.46,.45,.94) both infinite;
+          text-shadow: 2px 2px #ff0000, -2px -2px #00ff00;
         }
 
-        .subtitle {
+        /* Efek Mengetik (Typewriter) */
+        .typewriter {
+          overflow: hidden;
+          border-right: .15em solid #ff0000;
+          white-space: nowrap;
+          margin: 0 auto;
+          letter-spacing: .15em;
+          font-size: 20px;
           color: #fff;
-          font-size: 1.2rem;
-          letter-spacing: 4px;
-          margin-top: 10px;
-          opacity: 0.8;
+          animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
         }
 
-        .msg-box {
-          margin-top: 30px;
-          padding: 10px 20px;
+        .box {
           border: 1px solid #ff0000;
+          padding: 15px;
+          margin-top: 25px;
           background: rgba(255, 0, 0, 0.1);
-          box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+          box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+          animation: pulse 2s infinite;
         }
 
-        .footer {
-          margin-top: 60px;
-          color: #333;
-          font-size: 0.8rem;
+        @keyframes typing {
+          from { width: 0 }
+          to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+          from, to { border-color: transparent }
+          50% { border-color: #ff0000; }
         }
 
         @keyframes glitch {
-          0% { text-shadow: 0.05em 0 0 #f00, -0.05em -0.025em 0 #0f0, 0.025em 0.05em 0 #00f; }
-          14% { text-shadow: 0.05em 0 0 #f00, -0.05em -0.025em 0 #0f0, 0.025em 0.05em 0 #00f; }
-          15% { text-shadow: -0.05em -0.025em 0 #f00, 0.025em 0.025em 0 #0f0, -0.05em -0.05em 0 #00f; }
-          49% { text-shadow: -0.05em -0.025em 0 #f00, 0.025em 0.025em 0 #0f0, -0.05em -0.05em 0 #00f; }
-          50% { text-shadow: 0.025em 0.05em 0 #f00, 0.05em 0 0 #0f0, 0 -0.05em 0 #00f; }
-          99% { text-shadow: 0.025em 0.05em 0 #f00, 0.05em 0 0 #0f0, 0 -0.05em 0 #00f; }
-          100% { text-shadow: -0.025em 0 0 #f00, -0.025em -0.025em 0 #0f0, -0.025em -0.05em 0 #00f; }
+          0% { transform: translate(0); }
+          20% { transform: translate(-3px, 3px); }
+          40% { transform: translate(-3px, -3px); }
+          60% { transform: translate(3px, 3px); }
+          80% { transform: translate(3px, -3px); }
+          100% { transform: translate(0); }
+        }
+
+        @keyframes pulse {
+          0% { transform: scale(1); box-shadow: 0 0 10px rgba(255,0,0,0.3); }
+          50% { transform: scale(1.05); box-shadow: 0 0 30px rgba(255,0,0,0.6); }
+          100% { transform: scale(1); box-shadow: 0 0 10px rgba(255,0,0,0.3); }
         }
       </style>
-      <div class="scanlines"></div>
-      <div class="container">
+      <div class="bg"></div>
+      <div class="content">
         <h1>./KSOTARIA</h1>
-        <div class="subtitle">SYSTEM HAS BEEN COMPROMISED</div>
-        <div class="msg-box">
-          [ STATUS: HACKED BY KSOTARIA 1337 ]<br/>
-          [ GREETZ: MY SELF &amp; ALL INDO HACKER ]
+        <div class="typewriter">SYSTEM HAS BEEN TAKEN OVER...</div>
+        <div class="box">
+          [+] Hacked By Ksotaria 1337 [+]<br/>
+          [+] Greetz: All Indonesian Hacker [+]
         </div>
-        <div class="footer">#FuckYou_Mafia</div>
+        <p style="color:#444; margin-top:40px;">#FuckYou_Mafia</p>
       </div>
     </div>
   </foreignObject>
 
   <script type="text/javascript">
     <![CDATA[
-      // Payload Verifikasi
-      console.log("Touched by Ksotaria");
-      try {
-        document.title = "404 - SYSTEM NOT FOUND";
-      } catch(e) {}
+      console.log("Ksotaria was here.");
+      document.title = "TERMINAL COMPROMISED";
     ]]>
   </script>
 </svg>
